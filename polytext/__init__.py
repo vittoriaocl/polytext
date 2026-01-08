@@ -27,7 +27,7 @@ if sentry_dsn:
 from .converter.pdf import convert_to_pdf, DocumentConverter
 from .loader.document import DocumentLoader
 from .exceptions.base import EmptyDocument, ExceededMaxPages, ConversionError
-from .generator.pdf import get_customized_pdf_from_markdown, PDFGenerator
+#from .generator.pdf import get_customized_pdf_from_markdown, PDFGenerator
 
 __all__ = [
     'convert_to_pdf',
@@ -36,6 +36,6 @@ __all__ = [
     'EmptyDocument',
     'ExceededMaxPages',
     'ConversionError',
-    'get_customized_pdf_from_markdown',
-    'PDFGenerator'
+    # 'get_customized_pdf_from_markdown',
+    # 'PDFGenerator'
 ]

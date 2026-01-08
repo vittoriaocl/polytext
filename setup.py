@@ -49,6 +49,9 @@ def get_requirements(*requirements_file):
     return dependencies
 
 
+with open("README.md", encoding="utf-8") as f:
+    long_description = f.read()
+
 setup(
     name='polytext',
     version='0.1.5b3',
@@ -63,7 +66,7 @@ setup(
     extras_require={
         'sentry': get_requirements('sentry.txt')
     },
-    long_description=open('README.md').read(),
+    long_description= long_description,#open('README.md').read(),
     long_description_content_type='text/markdown',
     python_requires='>=3.12',
     classifiers=[

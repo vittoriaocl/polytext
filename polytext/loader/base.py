@@ -284,6 +284,15 @@ class BaseLoader:
         if file_extension:
             file_extension = file_extension.lower()
 
+        if file_extension == ".xbrl":
+            from ..loader.xbrl import XBRLLoader
+            return XBRLLoader(
+                source=self.source,
+                markdown_output=self.markdown_output,
+                temp_dir=self.temp_dir,
+                **kwargs,
+            )
+
         if is_document_fallback:
             return DocumentOCRLoader(llm_api_key=llm_api_key, markdown_output=self.markdown_output, temp_dir=self.temp_dir, timeout_minutes=self.timeout_minutes, ocr_provider=self.provider, ocr_model=self.ocr_model, **kwargs)
 
